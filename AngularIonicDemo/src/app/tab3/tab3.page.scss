@@ -1,0 +1,20 @@
+.center-component {
+    display: flex;
+    justify-content: center;
+}
+
+.center-display-text {
+    align-items: center;
+    text-align: center;
+    width: auto;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 20vh;
+    padding: 10px;
+}
+
+.column-header {
+    background-color: lightgray;
+    font-size: 1.5em;
+    padding: 4px;
+}
