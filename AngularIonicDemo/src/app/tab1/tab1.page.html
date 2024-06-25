@@ -1,17 +1,26 @@
 <ion-header [translucent]="true">
+
   <ion-toolbar>
+    <!-- Name at the header of the page -->
     <ion-title>
-      Tab 1
+      Angular Form Test
     </ion-title>
   </ion-toolbar>
+
 </ion-header>
 
+<!-- Hidden header, alternative in case you want to add another one? -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="indent">
+    <!-- Get the user's first and last name -->
+    <ion-input [(ngModel)]="fullName" labelPlacement="stacked" helperText="Please only enter two words"
+      label="Provide your first and last name"></ion-input>
+
+    <br>
+
+    <!-- Display the newly formatted name -->
+    <app-reformat-name class="center-component" [fullName]="fullName"></app-reformat-name>
+  </div>
+
 </ion-content>
