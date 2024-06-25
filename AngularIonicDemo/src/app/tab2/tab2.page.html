@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Sort JSON in a Table
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br/>
+  <ion-text class="center-component suggestion">
+    Try clicking on the table headers to reorder the content!
+  </ion-text>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <!-- Header buttons -->
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand="full" (click)="sortBy('name')">Sort by Name</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="full" (click)="sortBy('time')">Sort by Time</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="full" (click)="sortBy('id')">Sort by Id</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Rows of data -->
+    <ion-row *ngFor="let item of sortedData">
+      <ion-col class="row-indent">{{ item.name }}</ion-col>
+      <ion-col class="row-indent">{{ item.time }}</ion-col>
+      <ion-col class="row-indent">{{ item.id }}</ion-col>
+    </ion-row>
+    
+  </ion-grid>
 </ion-content>
